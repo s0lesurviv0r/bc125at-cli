@@ -15,22 +15,24 @@ This is a Go port of [bc125py](https://github.com/itsmaxymoo/bc125py) by itsmaxy
 
 ### Pre-built binaries
 
-Download from the `build/dist/` directory for your platform:
-
-| Platform | Binary |
-|----------|--------|
-| Linux (amd64) | `bc125at-0.1.0-linux-amd64` |
-| Linux (arm64) | `bc125at-0.1.0-linux-arm64` |
-| macOS (Intel) | `bc125at-0.1.0-darwin-amd64` |
-| macOS (Apple Silicon) | `bc125at-0.1.0-darwin-arm64` |
-| Windows (amd64) | `bc125at-0.1.0-windows-amd64.exe` |
+Download binaries from the [releases page](https://github.com/s0lesurviv0r/bc125at-cli/releases).
 
 ### Build from source
 
 ```sh
-make build       # produces build/bc125at
-make release     # cross-compiles all platforms into build/dist/
+make build       # produces build/bc125at for the current platform
+make dist        # cross-compiles all platforms into build/dist/
 ```
+
+Supported platforms for `make dist`:
+
+| Platform | Output |
+|----------|--------|
+| Linux (amd64) | `build/dist/bc125at-<version>-linux-amd64` |
+| Linux (arm64) | `build/dist/bc125at-<version>-linux-arm64` |
+| macOS (Intel) | `build/dist/bc125at-<version>-darwin-amd64` |
+| macOS (Apple Silicon) | `build/dist/bc125at-<version>-darwin-arm64` |
+| Windows (amd64) | `build/dist/bc125at-<version>-windows-amd64.exe` |
 
 ## Usage
 

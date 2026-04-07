@@ -3,7 +3,7 @@ VERSION := $(shell grep 'version = ' cmd/root.go | awk -F'"' '{print $$2}')
 BUILD   := build
 DIST    := build/dist
 
-.PHONY: all build test clean release
+.PHONY: all build test clean dist release
 
 all: build
 
@@ -17,7 +17,7 @@ test:
 clean:
 	rm -rf $(BUILD) $(DIST)
 
-release: clean
+dist: clean
 	mkdir -p $(DIST)
 	GOOS=linux   GOARCH=amd64 go build -ldflags="-s -w" -o $(DIST)/$(BIN)-$(VERSION)-linux-amd64   .
 	GOOS=linux   GOARCH=arm64 go build -ldflags="-s -w" -o $(DIST)/$(BIN)-$(VERSION)-linux-arm64   .
@@ -25,3 +25,5 @@ release: clean
 	GOOS=darwin  GOARCH=arm64 go build -ldflags="-s -w" -o $(DIST)/$(BIN)-$(VERSION)-darwin-arm64  .
 	GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o $(DIST)/$(BIN)-$(VERSION)-windows-amd64.exe .
 	@echo "Binaries written to $(DIST)/"
+
+release: dist
