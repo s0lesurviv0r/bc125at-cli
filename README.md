@@ -4,6 +4,8 @@ A command-line tool for programming the Uniden BC125AT radio scanner over USB se
 
 Supports reading and writing channels and settings using JSON or CSV files.
 
+This is a Go port of [bc125py](https://github.com/itsmaxymoo/bc125py) by itsmaxymoo.
+
 ## Requirements
 
 - Uniden BC125AT scanner powered on and connected via USB
@@ -190,6 +192,25 @@ index,name,frequency_mhz,modulation,ctcss_dcs,delay,locked_out,priority
 | `contrast` | Display contrast | `1`–`15` |
 | `scan_banks` | Active scan banks | 10-character string of `0`/`1` |
 | `weather_scan` | Weather alert | `0` (off), `1` (on) |
+
+## Troubleshooting
+
+### `cdc_acm probe failed with error -22` / device not detected
+
+If you see the following in `dmesg`:
+
+```
+cdc_acm 2-2:1.0: Zero length descriptor references
+cdc_acm 2-2:1.0: probe with driver cdc_acm failed with error -22
+```
+
+The `cdc_acm` driver is failing to claim the device. Load the `usbserial` driver manually with the BC125AT's vendor and product IDs:
+
+```sh
+sudo modprobe usbserial vendor=0x1965 product=0x0017
+```
+
+The scanner should then appear as `/dev/ttyUSB0` (or similar).
 
 ## License
 
