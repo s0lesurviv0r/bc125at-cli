@@ -15,7 +15,7 @@ This is a Go port of [bc125py](https://github.com/itsmaxymoo/bc125py) by itsmaxy
 
 ### Pre-built binaries
 
-Download binaries from the [releases page](https://github.com/s0lesurviv0r/bc125at-cli/releases).
+Download binaries from the [releases page](https://github.com/jacobzelek/bc125at-cli/releases).
 
 ### Build from source
 
