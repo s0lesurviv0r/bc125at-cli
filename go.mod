@@ -1,4 +1,4 @@
-module github.com/jzelek/bc125-cli
+module github.com/jacobzelek/bc125-cli
 
 go 1.21
 

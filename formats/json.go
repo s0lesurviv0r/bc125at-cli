@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/jzelek/bc125-cli/scanner"
+	"github.com/jacobzelek/bc125-cli/scanner"
 )
 
 // ScannerData is the top-level JSON structure for a full scanner backup.

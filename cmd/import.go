@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jzelek/bc125-cli/formats"
+	"github.com/jacobzelek/bc125-cli/formats"
 	"github.com/spf13/cobra"
 )
 

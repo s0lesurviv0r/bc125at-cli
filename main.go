@@ -1,6 +1,6 @@
 package main
 
-import "github.com/jzelek/bc125-cli/cmd"
+import "github.com/jacobzelek/bc125-cli/cmd"
 
 func main() {
 	cmd.Execute()

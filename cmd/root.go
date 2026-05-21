@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/jzelek/bc125-cli/scanner"
+	"github.com/jacobzelek/bc125-cli/scanner"
 	"github.com/spf13/cobra"
 )
 
